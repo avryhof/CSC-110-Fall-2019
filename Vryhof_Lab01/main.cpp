@@ -1,4 +1,4 @@
- /**********************************************************************
+/**********************************************************************
 * Program Name:   Lab01_Vryhof
 * Author:        Amos Vryhof
 * Date:           2019-08-26
@@ -34,8 +34,7 @@ using namespace std;
 
 //None in this program.
 
-int main()
-{
+int main() {
     //Local variables
     string nickName;  //name of User
 
@@ -43,7 +42,7 @@ int main()
 
     //Clear the screen
     system("cls");
-   
+
     //Prompt User for name
     cout << "Please enter your nick name: ";
     cin >> nickName;
@@ -54,7 +53,7 @@ int main()
     cout << "\n\n";
 
     //Pause to read output
-   system ("pause");
+    system("pause");
 
     //Indicate to OS successful termination of program
     return 0;
