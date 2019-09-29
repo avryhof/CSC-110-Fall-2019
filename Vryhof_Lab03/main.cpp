@@ -52,18 +52,6 @@ using namespace std;
 /*********************** Global Data Declarations ********************/
 /**************************** main Function **************************/
 
-float floatInput(string prompt) {
-    /*****************************************************************
-     * Prompt the user, and retrieve a float value.
-     */
-    float inputValue;
-
-    cout << prompt;
-    cin >> inputValue;
-
-    return inputValue;
-}
-
 int main() {
     // Local variables
     float triBase;
@@ -74,10 +62,12 @@ int main() {
     cout << "Please enter the requested measurements.\n";
 
     // Get the Base measurement of the triangle
-    triBase = floatInput("Base: ");
+    cout << "Base: ";
+    cin >> triBase;
 
     // Get the height measurement of the triangle
-    triHeight = floatInput("Height: ");
+    cout << "Height: ";
+    cin >> triHeight;
 
     // Compute the area of the triangle
     triArea = (triBase * triHeight) / 2;
