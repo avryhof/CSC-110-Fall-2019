@@ -49,16 +49,9 @@
 #       3. ELSE.
 #           IF totalMinutes >= flatRateMinutes
 #               o finalCost = flatRate + ((totalMinutes - flatRateMinutes) * perMinuteRate);
-            IF (toalMinutes - flatRateMinutes)
-#           o Compute the total hours parked:
-#               hoursParked = totalMinutes / 60
-#           o Compute the left over minutes parked:
-#               minutesParked = totalMinutes % 60
-#           o Compute the parking fee for the number of hours parked:
-#               parkingFee = hoursParked * 1.00
-#           o IF minutesParked is greater than zero THEN
-#               parkingFee = parkingFee + 1.00
-#           o Display the parkingFee
+            ELSE IF (toalMinutes < flatRateMinutes)
+#               o finalCost = totalMinutes * perMinuteRate;
+#           o Display the finalCost
 #       4.  END IF
  **********************************************************************/
 
@@ -77,28 +70,29 @@ int main() {
     int totalMinutes;
     int flatRateMinutes = 10;
     float flatRateCost = 0.99;
-    float perMinuteCost = 0.10;
+    float perMinuteRate = 0.10;
 
     float finalCost;
 
     cout << "Welcome to the BELLular digital pre-paid phone call terminal." << endl;
 
-    // Get the Base measurement of the triangle
+    // Get the number of minutes the call will be for.
     cout << "Please input how many minutes you want to buy: ";
     cin >> totalMinutes;
 
     if (totalMinutes == 0) {
-        cout << "Zero is an invalid value.  We cannot compute your fee, if you did not park!" << endl;
+        cout << "Zero is an invalid value.  We cannot calculate for a zero minute call!" << endl;
 
-    } else if (totalMinutes >= flatRateMinutes) {
-        hoursParked = totalMinutes / 60;
-        minutesParked = totalMinutes % 60;
-        parkingFee = hoursParked * parkingFeeAmount;
-        if (minutesParked > 0) {
-            parkingFee += parkingFeeAmount;
+    } else {
+
+        if (totalMinutes >= flatRateMinutes) {
+            finalCost = flatRateCost + ((totalMinutes - flatRateMinutes) * perMinuteRate);
+        } else {
+            finalCost = totalMinutes * perMinuteRate;
         }
-        cout << "Your car has been parked " << hoursParked << " hours and " << minutesParked << " minutes." << endl;
-        cout << "You owe $" << setw(5) << setfill('0') << fixed << showpoint << setprecision(2) << parkingFee << " in parking fees." << endl;
+
+        cout << "The total cost for your phone call will be $" << setw(5) << fixed << showpoint << setprecision(2) << finalCost << endl;
+        cout << "Thank you for calling with BELLular!" << endl;
     }
 
     //Pause to read output

@@ -60,54 +60,8 @@ using namespace std;
 /*********************** Global Data Declarations ********************/
 /**************************** main Function **************************/
 int main() {
-    // Local variable
-    // Input
-    int waistLineInches;
-    float weightPounds;
-
-    // Output
-    float neckSize;
-    float hatSize;
-    float shoeSize;
-    float armLength;
-
-    // For table formatting purposes
-    string labelArticle = "Article";
-    string labelSize = "Size";
-    int columnWidth = 16;
-
-    cout << "Welcome to the Tailor's Assistant. - Helping high-tech tailors since 1856!\n\n";
-    cout << "This program can help you calculate arm, neck, hat, and shoe sizes with two easy inputs.\n\n";
-
-    // Get the waist Line measurement
-    cout << "Waist Line in whole inches: ";
-    cin >> waistLineInches;
-
-    // Get the weight
-    cout << "Weight in pounds: ";
-    cin >> weightPounds;
-
-    // Calculate Neck Size
-    neckSize = (weightPounds / waistLineInches) * 3;
-    // Calculate hat size
-    hatSize = neckSize / 2.125;
-    // Calculate shoe size
-    shoeSize = (waistLineInches / weightPounds) * 50.0;
-    // Calculate arm length
-    armLength = waistLineInches / 2.0;
     
-//    articleHeadingWidth = 
     
-    cout << "\n";
-	cout << setw(columnWidth - (labelArticle.size() / 2)) << labelArticle;
-    cout << "  ";
-    cout << setw(columnWidth - (labelSize.size() / 2)) << labelSize;
-    cout << "\n" << "----------------  ----------------" << "\n";
-	cout << setw(columnWidth) << left << "Neck" << "  " << setw(columnWidth) << right << fixed << showpoint << setprecision(2) << neckSize << endl;
-	cout << setw(columnWidth) << left << "Hat" << "  " << setw(columnWidth) << right << fixed << showpoint << setprecision(2) << hatSize << endl;
-	cout << setw(columnWidth) << left << "Shoe" << "  " << setw(columnWidth) << right << fixed << showpoint << setprecision(2) << shoeSize << endl;
-	cout << setw(columnWidth) << left << "Arm Length" << "  " << setw(columnWidth) << right << fixed << showpoint << setprecision(2) << armLength << endl;
-	cout << "\n\n";
     //Pause to read output
     system("pause");
 
